@@ -91,7 +91,7 @@ const initializeMenu = () => {
 };
 const setActiveLinks = () => {
 	document.querySelectorAll(`a.pages, .submenu a`)?.forEach(el => el?.classList.remove('active'));
-	const path = window.location.pathname?.split('patil-rahuls.github.io/')?.pop();
+	const path = window.location.pathname?.split('/')?.pop();
 	if(path){
 		if(path.includes('/')){
 			const parentMenuItem = document.querySelector(`a[href='${path.split('/')[0]}']`);

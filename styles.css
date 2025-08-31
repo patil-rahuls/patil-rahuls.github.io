@@ -187,7 +187,7 @@ footer {
     padding:1px 6px;
 }*/
 
-@media (max-width: 500px) {
+/*@media (max-width: 500px) {
     .wrapper {
       grid-template-columns: 4fr;
       grid-template-areas:
@@ -195,7 +195,7 @@ footer {
           "sidebar"
           "footer";
     }
-}
+}*/
 
 /* Photos Layout */
 .wrap {
