@@ -122,12 +122,6 @@ article {
 article table tbody tr:nth-child(even) td{
     padding-bottom:20px;
 }
-table tbody tr td img, table tbody tr td iframe {
-    width: 100%;
-}
-table tbody tr td p img {
-    width: auto;
-}
 
 aside {
     grid-area: sidebar;
@@ -278,6 +272,12 @@ footer {
 }
 
 @media (max-width: 699px) {
+    table tbody tr td img, table tbody tr td iframe {
+        width: 100%;
+    }
+    table tbody tr td p img {
+        width: auto;
+    }
     #menu {
         display: none !important;
     }
