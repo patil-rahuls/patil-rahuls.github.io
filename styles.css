@@ -89,6 +89,8 @@ pre{
 .captions{
     font-size: 11px;
     color: #aaa;
+    margin: 0 auto;
+    display: block;
 }
 .links{
     color: #4c8bf5;
@@ -119,6 +121,12 @@ article {
 }
 article table tbody tr:nth-child(even) td{
     padding-bottom:20px;
+}
+table tbody tr td img, table tbody tr td iframe {
+    width: 100%;
+}
+table tbody tr td p img {
+    width: auto;
 }
 
 aside {
