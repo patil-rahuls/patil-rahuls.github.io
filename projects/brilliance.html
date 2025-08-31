@@ -1,248 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Welcome!">
+    <meta name="keywords" content="software engineer, senior software engineer, node.js, node, javascript, robotics, viola jones, face detection, face recognition">
+    <title>Brilliance - patil-rahuls.github.io</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+   <body>
+      <div class="wrapper">
+         <aside>
+            <ul id="menu"></ul>
+            <div id="loading"></div>
+         </aside>
+         <article>
+            <h1 id="heading">Projects | Brilliance</h1>
+            <div>
+                <style>
+                    .data-table {
+                        border: solid 1px #DDEEEE;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        font: normal 13px Arial, sans-serif;
+                    }
+                    .data-table thead th {
+                        background-color: #DDEFEF;
+                        border: solid 1px #DDEEEE;
+                        color: #336B6B;
+                        padding: 10px;
+                        text-align: left;
+                        text-shadow: 1px 1px 1px #fff;
+                    }
+                    .data-table tbody td {
+                        border: solid 1px #DDEEEE;
+                        color: #333;
+                        padding: 10px;
+                        text-shadow: 1px 1px 1px #fff;
+                    }
+                </style>
+                <table class="fade-in">
+                    <tbody>
+                        <tr><td><strong>About the project</strong><hr></hr></td></tr>
+                        <tr>
+                            <td>
+                                <span>
+                                    Brilliance is a 4WD(4 Wheel Drive) robot development platform with an <a class="links" href="https://www.microchip.com/en-us/product/ATMEGA644P" target="_blank">ATmega 644P</a> microcontroller as it's brain onboard a custom made AVR development board.
+                                </span>
+                                <br><br>
+                                <span>
+                                    The development board alone can be used for developing embedded applications involving high-speed wireless communication(SPI, I2C and UART), human-computer interaction, working with sensors and motor control, etc.
+                                </span>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr><td><strong><br>What's so special?</strong><hr></hr></td></tr>
+                        <tr>
+                            <td>
+                                <span>The development board is <i>fully compatible</i> with the open source prototyping platform <a class="links" href="https://www.arduino.cc" target="_blank">Arduino</a>. You can use most of the popular Atmel's microcontrollers* with <a class="links" href="https://docs.arduino.cc/hacking/software/Bootloader/" target="_blank">Arduino bootloader</a> burned on it.</span>
+                                <br><br>
+                                <span><i><strong>Its compatible with Arduino Hardware too</strong></i>. Additionally, not only, you can stack up any Arduino sheild on it but also use this as a shield on top of an existing Arduino stack, by soldering male/female header pins on appropriate side.</span>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr><td><strong><br>Features & Specifications</strong><hr></hr></td></tr>
+                        <tr>
+                            <td>
+                                <span><b>2 x DRV8833 Motor Drivers</b> for driving two brushed DC/Servo motors. Each DRV8833 Motor driver is in parellel configuration to provide maximum output current per motor (2.4 A).</span>
+                                <span><b>Active Buzzer</b> connected to Digital pin 03.</span>
+                                <span><b>Connection for OLED</b> Bluetooth communication, NRF Modules, OLED Display module shield to it, as
+                                It features two DRV8833 Motor Drivers with parellel configurations each to give maximum power to the motors.</span>
+                                </span>
+                            </td>
+                        </tr>
 
-<style>
-    .data-table {
-        border: solid 1px #DDEEEE;
-        border-collapse: collapse;
-        border-spacing: 0;
-        font: normal 13px Arial, sans-serif;
-    }
-    .data-table thead th {
-        background-color: #DDEFEF;
-        border: solid 1px #DDEEEE;
-        color: #336B6B;
-        padding: 10px;
-        text-align: left;
-        text-shadow: 1px 1px 1px #fff;
-    }
-    .data-table tbody td {
-        border: solid 1px #DDEEEE;
-        color: #333;
-        padding: 10px;
-        text-shadow: 1px 1px 1px #fff;
-    }
-</style>
-<table>
-    <tbody>
-        <tr><td><strong>About the project</strong><hr></hr></td></tr>
-        <tr>
-            <td>
-                <span>
-                    Brilliance is a 4WD(4 Wheel Drive) robot development platform with an <a class="links" href="https://www.microchip.com/en-us/product/ATMEGA644P" target="_blank">ATmega 644P</a> microcontroller as it's brain onboard a custom made AVR development board.
-                </span>
-                <br><br>
-                <span>
-                    The development board alone can be used for developing embedded applications involving high-speed wireless communication(SPI, I2C and UART), human-computer interaction, working with sensors and motor control, etc.
-                </span>
-            </td>
-        </tr>
-        <br>
-        <tr><td><strong><br>What's so special?</strong><hr></hr></td></tr>
-        <tr>
-            <td>
-                <span>The development board is <i>fully compatible</i> with the open source prototyping platform <a class="links" href="https://www.arduino.cc" target="_blank">Arduino</a>. You can use most of the popular Atmel's microcontrollers* with <a class="links" href="https://docs.arduino.cc/hacking/software/Bootloader/" target="_blank">Arduino bootloader</a> burned on it.</span>
-                <br><br>
-                <span><i><strong>Its compatible with Arduino Hardware too</strong></i>. Additionally, not only, you can stack up any Arduino sheild on it but also use this as a shield on top of an existing Arduino stack, by soldering male/female header pins on appropriate side.</span>
-            </td>
-        </tr>
-        <br>
-        <tr><td><strong><br>Features & Specifications</strong><hr></hr></td></tr>
-        <tr>
-            <td>
-                <span><b>2 x DRV8833 Motor Drivers</b> for driving two brushed DC/Servo motors. Each DRV8833 Motor driver is in parellel configuration to provide maximum output current per motor (2.4 A).</span>
-                <span><b>Active Buzzer</b> connected to Digital pin 03.</span>
-                <span><b>Connection for OLED</b> Bluetooth communication, NRF Modules, OLED Display module shield to it, as
-                It features two DRV8833 Motor Drivers with parellel configurations each to give maximum power to the motors.</span>
-                </span>
-            </td>
-        </tr>
+                        <tr><td><strong>Pin Mapping</strong></td></tr>
+                        <tr><td>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Arduino Pin</th>
+                                        <th>Brilliance Pin</th>
+                                    </tr>
+                                </thead>
+                                <thead><tr><th COLSPAN="3">Digital I/O Pins</th></tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>(UART 0) RX</b></td>
+                                        <td>0</td>
+                                        <td>8 (Serial <-> USB)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(UART 0) TX</b></td>
+                                        <td>1</td>
+                                        <td>9 (Serial <-> USB)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>INTERRUPT 0</b></td>
+                                        <td>2</td>
+                                        <td>10 (Speed Sensor Motor1)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>INTERRUPT 1</b></td>
+                                        <td>3</td>
+                                        <td>11 (Speed Sensor Motor2)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>4</td>
+                                        <td>18 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>5</td>
+                                        <td>19 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>6</td>
+                                        <td>20 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>7</td>
+                                        <td>21 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>8</td>
+                                        <td>22 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>9</td>
+                                        <td>23 (16x2 LCD Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(SPI) SS</b></td>
+                                        <td>10</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(SPI) MOSI</b></td>
+                                        <td>11</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(SPI) MISO</b></td>
+                                        <td>12</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(SPI) SCK</b></td>
+                                        <td>13</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>-</td>
+                                        <td>0 (Debug LED)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>-</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>GPIO</b></td>
+                                        <td>-</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>INT2</b></td>
+                                        <td>-</td>
+                                        <td>3 (Buzzer)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PWM</b></td>
+                                        <td>-</td>
+                                        <td>12 (Motor1 Left)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PWM</b></td>
+                                        <td>-</td>
+                                        <td>13 (Motor1 Right)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PWM</b></td>
+                                        <td>-</td>
+                                        <td>14 (Motor2 Left)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PWM</b></td>
+                                        <td>-</td>
+                                        <td>15 (Motor2 Right)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>SCL</b></td>
+                                        <td>-</td>
+                                        <td>16 (OLED Display)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>SDA</b></td>
+                                        <td>-</td>
+                                        <td>17 (OLED Display)</td>
+                                    </tr>
+                                </tbody>
+                                <thead><tr><th COLSPAN="3">Analog I/O Pins</th></tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>(Analog I/O) 0</b></td>
+                                        <td>A0</td>
+                                        <td>A7</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 1</b></td>
+                                        <td>A1</td>
+                                        <td>A6</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 2</b></td>
+                                        <td>A2</td>
+                                        <td>A5</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 3</b></td>
+                                        <td>A3</td>
+                                        <td>A4</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 1</b></td>
+                                        <td>A4 (SCL)</td>
+                                        <td>A3</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 1</b></td>
+                                        <td>A5 (SDA)</td>
+                                        <td>A2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 1</b></td>
+                                        <td>-</td>
+                                        <td>A1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>(Analog I/O) 1</b></td>
+                                        <td>-</td>
+                                        <td>A0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td></tr>
 
-        <tr><td><strong>Pin Mapping</strong></td></tr>
-        <tr><td>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Arduino Pin</th>
-                        <th>Brilliance Pin</th>
-                    </tr>
-                </thead>
-                <thead><tr><th COLSPAN="3">Digital I/O Pins</th></tr></thead>
-                <tbody>
-                    <tr>
-                        <td><b>(UART 0) RX</b></td>
-                        <td>0</td>
-                        <td>8 (Serial <-> USB)</td>
-                    </tr>
-                    <tr>
-                        <td><b>(UART 0) TX</b></td>
-                        <td>1</td>
-                        <td>9 (Serial <-> USB)</td>
-                    </tr>
-                    <tr>
-                        <td><b>INTERRUPT 0</b></td>
-                        <td>2</td>
-                        <td>10 (Speed Sensor Motor1)</td>
-                    </tr>
-                    <tr>
-                        <td><b>INTERRUPT 1</b></td>
-                        <td>3</td>
-                        <td>11 (Speed Sensor Motor2)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>4</td>
-                        <td>18 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>5</td>
-                        <td>19 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>6</td>
-                        <td>20 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>7</td>
-                        <td>21 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>8</td>
-                        <td>22 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>9</td>
-                        <td>23 (16x2 LCD Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>(SPI) SS</b></td>
-                        <td>10</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td><b>(SPI) MOSI</b></td>
-                        <td>11</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td><b>(SPI) MISO</b></td>
-                        <td>12</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td><b>(SPI) SCK</b></td>
-                        <td>13</td>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>-</td>
-                        <td>0 (Debug LED)</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>-</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td><b>GPIO</b></td>
-                        <td>-</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td><b>INT2</b></td>
-                        <td>-</td>
-                        <td>3 (Buzzer)</td>
-                    </tr>
-                    <tr>
-                        <td><b>PWM</b></td>
-                        <td>-</td>
-                        <td>12 (Motor1 Left)</td>
-                    </tr>
-                    <tr>
-                        <td><b>PWM</b></td>
-                        <td>-</td>
-                        <td>13 (Motor1 Right)</td>
-                    </tr>
-                    <tr>
-                        <td><b>PWM</b></td>
-                        <td>-</td>
-                        <td>14 (Motor2 Left)</td>
-                    </tr>
-                    <tr>
-                        <td><b>PWM</b></td>
-                        <td>-</td>
-                        <td>15 (Motor2 Right)</td>
-                    </tr>
-                    <tr>
-                        <td><b>SCL</b></td>
-                        <td>-</td>
-                        <td>16 (OLED Display)</td>
-                    </tr>
-                    <tr>
-                        <td><b>SDA</b></td>
-                        <td>-</td>
-                        <td>17 (OLED Display)</td>
-                    </tr>
-                </tbody>
-                <thead><tr><th COLSPAN="3">Analog I/O Pins</th></tr></thead>
-                <tbody>
-                    <tr>
-                        <td><b>(Analog I/O) 0</b></td>
-                        <td>A0</td>
-                        <td>A7</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 1</b></td>
-                        <td>A1</td>
-                        <td>A6</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 2</b></td>
-                        <td>A2</td>
-                        <td>A5</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 3</b></td>
-                        <td>A3</td>
-                        <td>A4</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 1</b></td>
-                        <td>A4 (SCL)</td>
-                        <td>A3</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 1</b></td>
-                        <td>A5 (SDA)</td>
-                        <td>A2</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 1</b></td>
-                        <td>-</td>
-                        <td>A1</td>
-                    </tr>
-                    <tr>
-                        <td><b>(Analog I/O) 1</b></td>
-                        <td>-</td>
-                        <td>A0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </td></tr>
-
-        <tr><td><strong>Main Parts</strong></td></tr>
-        <tr><td><span>
-            -Low level controller - AtMega644P Microcontroller.
-            <br>-Processing - Android device can be connected to the controller adding to the system's processing power.
-            <br>
-        </span></td></tr>
-    </tbody>
-</table>
+                        <tr><td><strong>Main Parts</strong></td></tr>
+                        <tr><td><span>
+                            -Low level controller - AtMega644P Microcontroller.
+                            <br>-Processing - Android device can be connected to the controller adding to the system's processing power.
+                            <br>
+                        </span></td></tr>
+                    </tbody>
+                </table>
 
 <!-- <svg class="svg-standalone-icon" width="100%" viewBox="175.32658168842593 115 199.34683662314816 128.903661289214" preserveAspectRatio="none"><g data-paper-data="{&quot;isIcon&quot;:&quot;true&quot;,&quot;iconType&quot;:&quot;icon&quot;,&quot;rawIconId&quot;:&quot;3137701&quot;,&quot;selectedEffects&quot;:{&quot;container&quot;:&quot;&quot;,&quot;transformation&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;},&quot;isDetailed&quot;:false,&quot;fillRule&quot;:&quot;evenodd&quot;,&quot;bounds&quot;:{&quot;x&quot;:175.32658168842593,&quot;y&quot;:115,&quot;width&quot;:199.34683662314816,&quot;height&quot;:128.903661289214},&quot;iconStyle&quot;:&quot;standalone&quot;,&quot;suitableAsStandaloneIcon&quot;:true}" fill-rule="evenodd"><path d="M211.32635,164.69657c11.30251,-46.41792 67.64247,-65.48551 104.82857,-34.68402c11.47506,9.57693 19.58526,22.95012 22.43245,38.22145c1.03535,5.69439 -7.59252,7.2474 -8.62787,1.55301c-7.76508,-42.01771 -58.41066,-60.48134 -91.45538,-33.04473c-9.83576,8.19647 -16.82433,19.67154 -19.32642,32.78589c-0.25883,2.15696 -2.07069,3.88254 -4.40021,3.88254h-35.11541c-5.78066,0 -5.78066,-8.71415 0,-8.71415zM275,145.11132c30.45637,0 45.90025,37.01354 24.2443,58.58321c-21.56967,21.65594 -58.58321,6.21207 -58.58321,-24.2443c0,-18.98131 15.3576,-34.33891 34.33891,-34.33891zM293.11852,161.3317c-16.13411,-16.04783 -43.657,-4.57277 -43.657,18.11851c0,22.69129 27.52289,34.16635 43.657,18.11851c9.92205,-10.00833 9.92205,-26.22871 0,-36.23704zM338.67364,194.29015c-11.30251,46.33164 -67.64247,65.39923 -104.82857,34.59774c-11.47506,-9.57693 -19.58526,-22.95012 -22.43245,-38.22145c-1.03535,-5.69439 7.59252,-7.2474 8.62787,-1.55301c7.76508,42.01771 58.41066,60.48134 91.45538,33.04473c9.83576,-8.19647 16.82433,-19.67154 19.32642,-32.78589c0.25883,-2.15696 2.07069,-3.88254 4.40021,-3.88254h35.11541c5.78067,0 5.78067,8.80043 0,8.80043z" data-paper-data="{&quot;isPathIcon&quot;:true}"></path></g></svg> -->
 
@@ -253,3 +272,27 @@
 <!-- <br> -->
 <!-- <br> -->
 <!-- <br> -->
+
+            </div>
+         </article>
+      </div>
+
+      <footer>
+        <ul class="footer" style="list-style:none;">
+          <li>
+             <a href="/contact" style="display:inline-block">contact</a>
+             &nbsp;
+             <a href="/privacy" style="display:inline-block">privacy</a>
+             &nbsp;
+             <!-- <div id="newsletter_form">
+                <button id="subscribe">Subscribe </button>
+                <input  id="newsletter" type="text" placeholder="for newsletter">
+             </div> -->
+          </li>
+       </ul>
+      </footer>
+
+      <script src="/config.js"></script>
+      <script src="/script.js"></script>
+   </body>
+</html>

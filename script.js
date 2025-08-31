@@ -5,65 +5,27 @@ const hideContents = () => {
 		element[0].style.display = 'none';
 	}
 };
-const isJsonString = function(str) {
-	try {
-		JSON.parse(str);
-	} catch (e) {
-		return false;
-	}
-	return true;
-};
-const setUrl = (pageName) => {
-	const newUrl = window.location.pathname.replace(/[^/]+$/, pageName.toLowerCase());
-	history.replaceState(null, "", newUrl);
-}
-const setHTMLTitle = pageName => {
-	document.title = pageName + " - rahulspatil.in";
-	document.getElementById("heading").innerHTML = pageName;
-	setUrl(pageName);
-};
-function fetchPage(elem){
-	const elemParent = elem.parentElement?.parentElement?.parentElement;
-	setHTMLTitle(elem.innerText);
-	document.getElementById("loading").style.display='block';
+const fetchPage = (elem) => {
 	hideContents();
-	const menuEl = elemParent?.parentElement;
-	if(menuEl){
-		menuEl.querySelectorAll('a')?.forEach(el => el?.classList.remove('active'));
-		elem.classList.add('active');
-		elemParent.querySelector('a.pages')?.classList.add('active');
-		elemParent.style.display = 'block';
-		if (elemParent?._mouseLeaveHandler) {
-			elemParent?.removeEventListener('mouseleave', elemParent._mouseLeaveHandler);
-			delete elemParent._mouseLeaveHandler;
-		}
-	}
-	const path = elem.getAttribute('x-href');
-	const newDiv = document.createElement('div');
-	fetch(path).then(resp => resp.text()).then(data => {
-		newDiv.innerHTML = data;
-	}).catch(error => console.error('Error loading page:', error)).finally(() => {
-		document.getElementById("loading").style.display='none';
-	});
-	document.querySelector('#heading')?.after(newDiv);
-}
+	document.getElementById("loading").style.display='block';
+};
 const initializeMenu = () => {
 	let menuHtml = '';
 	for(const [k, v] of Object.entries(menu)) {
 		const target = k.toLowerCase() === 'home' ? 'index' : k.toLowerCase();
 		if(typeof v === 'object') {
-			menuHtml += `<li><a class='pages' href='${target}.html'>${k}</a>`;
+			menuHtml += `<li><a class='pages' href='/${target}.html' onclick='fetchPage(this);'>${k}</a>`;
 			menuHtml += `<ul style="display:none" class='submenu'>`;
 			for(const [subMenuItem, { status }] of Object.entries(v)) {
 				if(status === 'active'){
-					menuHtml += `<li><a class='' href='javascript:void(0)' x-href="${k.toLowerCase()}/${subMenuItem.toLowerCase()}" onclick='fetchPage(this);'>${subMenuItem}</a></li>`;
+					menuHtml += `<li><a class='' href="/${k.toLowerCase()}/${subMenuItem.toLowerCase()}" onclick='fetchPage(this);'>${subMenuItem}</a></li>`;
 				} else {
-					menuHtml += `<li><a class='' href='javascript:void(0)'><strike>${subMenuItem}</strike></a></li>`;
+					menuHtml += `<li><a class='' href="javascript:void(0)"><strike>${subMenuItem}</strike></a></li>`;
 				}
 			}
 			menuHtml += `</ul>`;
 		} else {
-			menuHtml += `<li><a class='pages' href='${target}'>${k}</a>`;
+			menuHtml += `<li><a class='pages' href='/${target}' onclick='fetchPage(this);'>${k}</a>`;
 		}
 		menuHtml += `</li>`;
 	}
@@ -82,41 +44,59 @@ const initializeMenu = () => {
 			menuItem.parentElement._mouseEnterHandler = mouseEnterHandler;
     	menuItem.parentElement._mouseLeaveHandler = mouseLeaveHandler;
 		}
-		menuItem.addEventListener('click', function(){
-			setHTMLTitle(this.innerText);
-			hideContents();
-			document.getElementById("loading").style.display='block';
-		});
+		// menuItem.addEventListener('click', function(){
+		// 	hideContents();
+		// 	document.getElementById("loading").style.display='block';
+		// });
 	});
+	// document.querySelectorAll('.submenu')?.forEach( submenu => {
+	// 	submenu.querySelectorAll('li a')?.forEach( el => {
+	// 		el.addEventListener('click', function(){
+	// 			hideContents();
+	// 			document.getElementById("loading").style.display='block';
+	// 		});
+	// 	});
+	// });
+};
+const showSubMenuIfPresent = menuElement => {
+	const subMenu = menuElement?.nextElementSibling;
+	if(subMenu?.classList.contains('submenu')){
+		subMenu.style.display='block';
+		if (menuElement.parentElement?._mouseLeaveHandler) {
+			menuElement.parentElement?.removeEventListener('mouseleave', menuElement.parentElement._mouseLeaveHandler);
+			delete menuElement.parentElement._mouseLeaveHandler;
+		}
+		if (menuElement.parentElement?._mouseEnterHandler) {
+			menuElement.parentElement?.removeEventListener('mouseenter', menuElement.parentElement._mouseEnterHandler);
+			delete menuElement.parentElement._mouseEnterHandler;
+		}
+	}
 };
 const setActiveLinks = () => {
 	document.querySelectorAll(`a.pages, .submenu a`)?.forEach(el => el?.classList.remove('active'));
-	const path = window.location.pathname?.split('/')?.pop();
+	const path = location.href.split(location.host)[1];
 	if(path){
-		if(path.includes('/')){
-			const parentMenuItem = document.querySelector(`a[href='${path.split('/')[0]}']`);
-			if(parentMenuItem){
-				parentMenuItem.classList.add('active');
-			}
-		}
 		const menuElement = document.querySelector(`a[href='${path}']`);
-		if(menuElement){
-			menuElement.classList.add('active');
-			const subMenu = menuElement.nextElementSibling;
-			if(subMenu?.classList.contains('submenu')){
-				subMenu.style.display='block';
-				if (menuElement.parentElement?._mouseLeaveHandler) {
-					menuElement.parentElement?.removeEventListener('mouseleave', menuElement.parentElement._mouseLeaveHandler);
-					delete menuElement.parentElement._mouseLeaveHandler;
+		menuElement?.classList.add('active');
+		const parts = path.split('/').filter(p => p);
+		// check if the menu has a submneu, and display it.
+		if(parts.length === 1) {
+			const menuElement = document.querySelector(`a[href='/${parts[0]}']`);
+			showSubMenuIfPresent(menuElement);
+		}
+		parts.pop();
+		if(parts.length >= 1) {
+			parts.forEach(part => {
+				const menuElement = document.querySelector(`a[href='/${part}.html']`);
+				if(menuElement){
+					menuElement?.classList.add('active');
+					// unhide this element's submenu
+					showSubMenuIfPresent(menuElement);
 				}
-				if (menuElement.parentElement?._mouseEnterHandler) {
-					menuElement.parentElement?.removeEventListener('mouseenter', menuElement.parentElement._mouseEnterHandler);
-					delete menuElement.parentElement._mouseEnterHandler;
-				}
-			}
+			});
 		}
 	} else {
-		document.querySelector(`a[href=index]`)?.classList?.add('active');
+		document.querySelector(`a[href="/index"]`)?.classList?.add('active');
 	}
 };
 document.addEventListener("DOMContentLoaded", function() {

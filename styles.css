@@ -186,7 +186,17 @@ footer {
     margin-right:-4px;
     padding:1px 6px;
 }*/
-
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInTop 0.2s ease-out forwards;
+}
+@keyframes fadeInTop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /*@media (max-width: 500px) {
     .wrapper {
       grid-template-columns: 4fr;
