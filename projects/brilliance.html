@@ -64,6 +64,27 @@
                             </td>
                         </tr>
                         <br>
+
+                        <tr><td><strong><br>The Board :</strong><hr></hr></td></tr>
+                        <tr>
+                            <td>
+                                <span>It was built using <a class="links" target="_blank" href="https://easyeda.com/">EasyEDA</a>. Unfortunately, I lost all the design files of this board. <i>long story(thanks to Google)</i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p align="center">
+                                    <img width="400" src="/assets/projects/brilliance/board_front.jpeg" alt="Brilliance Development Board - Front side">
+                                    <br><i class="captions">1. Brilliance Development Board - Front</i>
+                                    <br><br><br>
+                                    <img width="400" src="/assets/projects/brilliance/board_rear.jpeg" alt="Brilliance Development Board - Rear side">
+                                    <br><i class="captions">2. Brilliance Development Board - Rear</i>
+                                    <br>
+                                </p>
+                            </td>
+                        </tr>
+                        <br>
+
                         <tr><td><strong><br>Features & Specifications</strong><hr></hr></td></tr>
                         <tr>
                             <td>
@@ -279,18 +300,30 @@
 
       <footer>
         <ul class="footer" style="list-style:none;">
-          <li>
-             <a href="/contact" style="display:inline-block">contact</a>
-             &nbsp;
-             <a href="/privacy" style="display:inline-block">privacy</a>
-             &nbsp;
-             <!-- <div id="newsletter_form">
-                <button id="subscribe">Subscribe </button>
-                <input  id="newsletter" type="text" placeholder="for newsletter">
-             </div> -->
-          </li>
-       </ul>
-      </footer>
+         <li>
+            <a href="/contact" style="display:inline-block">contact</a>
+            &nbsp;
+            <a href="/privacy" style="display:inline-block">privacy</a>
+            &nbsp;
+            <div id="newsletter_form">
+               <button id="mobileMenuBtn">
+                 <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+              </button>
+               <!-- <button id="subscribe">Subscribe </button>
+               <input  id="newsletter" type="text" placeholder="for newsletter"> -->
+            </div>
+         </li>
+        </ul>
+
+        <section id="mobileMenu" hidden="hidden">
+           <button id="closeMobileMenuBtn" title="Close">&#x2715;</button>
+           <ul id="mobileMenuList"></ul>
+        </section>
+     </footer>
 
       <script src="/config.js"></script>
       <script src="/script.js"></script>

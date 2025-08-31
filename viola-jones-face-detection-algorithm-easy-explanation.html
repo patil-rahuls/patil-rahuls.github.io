@@ -101,20 +101,32 @@
         </article>
      </div>
 
-    <footer>
+     <footer>
       <ul class="footer" style="list-style:none;">
-        <li>
-           <a href="/contact" style="display:inline-block">contact</a>
-           &nbsp;
-           <a href="/privacy" style="display:inline-block">privacy</a>
-           &nbsp;
-           <!-- <div id="newsletter_form">
-              <button id="subscribe">Subscribe </button>
-              <input  id="newsletter" type="text" placeholder="for newsletter">
-           </div> -->
-        </li>
-     </ul>
-    </footer>
+       <li>
+          <a href="/contact" style="display:inline-block">contact</a>
+          &nbsp;
+          <a href="/privacy" style="display:inline-block">privacy</a>
+          &nbsp;
+          <div id="newsletter_form">
+             <button id="mobileMenuBtn">
+               <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+            </button>
+             <!-- <button id="subscribe">Subscribe </button>
+             <input  id="newsletter" type="text" placeholder="for newsletter"> -->
+          </div>
+       </li>
+      </ul>
+
+      <section id="mobileMenu" hidden="hidden">
+         <button id="closeMobileMenuBtn" title="Close">&#x2715;</button>
+         <ul id="mobileMenuList"></ul>
+      </section>
+   </footer>
 
     <script src="/config.js"></script>
     <script src="/script.js"></script>

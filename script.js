@@ -30,6 +30,7 @@ const initializeMenu = () => {
 		menuHtml += `</li>`;
 	}
 	document.querySelector('#menu').innerHTML = menuHtml;
+	document.querySelector('#mobileMenuList').innerHTML = menuHtml;
 	document.querySelectorAll('.pages').forEach(menuItem => {
 		const nextEl = menuItem.nextElementSibling; // Submenu
 		if(nextEl){
@@ -99,9 +100,25 @@ const setActiveLinks = () => {
 		document.querySelector(`a[href="/index"]`)?.classList?.add('active');
 	}
 };
+const initializeMobileMenu = () => {
+	const mobileMenuBtn = document.querySelector('#mobileMenuBtn');
+	const mobileMenu = document.querySelector('#mobileMenu');
+	const closeMobileMenuBtn = document.querySelector('#closeMobileMenuBtn');
+	function showMenu() {
+		mobileMenuBtn.setAttribute('hidden', '');
+		mobileMenu.removeAttribute('hidden');
+	};
+	function hideMenu() {
+		mobileMenu.setAttribute('hidden', '');
+		mobileMenuBtn.removeAttribute('hidden');
+	};
+	mobileMenuBtn.addEventListener('click', showMenu);
+	closeMobileMenuBtn.addEventListener('click', hideMenu);
+};
 document.addEventListener("DOMContentLoaded", function() {
 	initializeMenu();
 	setActiveLinks();
+	initializeMobileMenu();
 });
 function openLink(elem){
 	const link = elem.getAttribute('x-href');
