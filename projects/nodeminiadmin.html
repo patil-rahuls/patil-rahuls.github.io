@@ -17,7 +17,7 @@
             <div id="loading"></div>
          </aside>
          <article>
-            <h1 id="heading">Projects | nodeMiniAdmin</h1>
+            <h1 id="heading"><a class="links" href="/projects.html">Projects</a> | nodeMiniAdmin</h1>
             <div>
                 <table class="fade-in">
                     <tbody>
@@ -33,28 +33,28 @@
                             </p>
                         </td></tr>
                         <tr><td></td></tr>
-                        <tr><td><strong>About nodeMiniAdmin</strong></td></tr>
-                        <tr><td><span>Its a minimal and lightweight tool for quick and easy access to MySQL databases. Focused on usability and simplicity. Written in Javascript, its a single-file app and requires Node.js to run. Its very easy to setup and use.</span></td></tr>
-                        <tr><td><strong>Why use nodeMiniAdmin?</strong></td></tr>
+                        <tr><td><strong>About nodeMiniAdmin</strong><hr></hr></td></tr>
+                        <tr><td><span>Its a minimal and lightweight tool for quick and easy access to MySQL databases.<br>Focused on usability and simplicity. Written in Javascript, its a single-file app and requires Node.js to run. Its very easy to setup and use.</span></td></tr>
+                        <tr><td><strong>Why use nodeMiniAdmin?</strong><hr></hr></td></tr>
                         <tr><td><span>
                             -Ease of use
                             <br>-No framework used
                             <br>-Easy to setup
-                            <br>-Portable - everything in a single file
+                            <br>-Portable - everything in a single js file
                             <br>-Extremely lightweight
                         </span></td></tr>
-                        <tr><td><strong>How to install</strong></td></tr>
+                        <tr><td><strong>How to install</strong><hr></hr></td></tr>
                         <tr><td><span>
                             1. Download or clone this <a href="https://github.com/patil-rahuls/nodeMiniAdmin.git">repo</a> to a directory of your choice.
-                            <br><i style="color:darkgrey">git clone https://github.com/patil-rahuls/nodeMiniAdmin.git</i>
-                            <br><br>  2. Install Node.js <i>(if you haven't already)</i> on your machine.
-                            <br><br>  3. Open up terminal in the directory where the file <i>'nma.js'</i> exists and run the js file.
-                            <br><i style="color:darkgrey">node nma.js</i>
-                            <br><br>  4. <strike>It might ask you to install the <i>sync-mysql</i> module. Please install it and repeat step 3.</strike> &nbsp; <i>[Update v2.0]</i> On the first run, <i>the script will automatically install the required dependency and start the app.</i>
-                            <br><br>  5. To run the app, open your browser and Navigate to <i style="color:darkgrey">https://localhost:3000/index</i>.
+                            <br><i class="terminal">$ git clone https://github.com/patil-rahuls/nodeMiniAdmin.git</i>
+                            <br>  2. Install Node.js <i>(if you haven't already)</i> on your machine.
+                            <br><br>  3. Open a terminal in the directory containing the file <i>'nma.js'</i> and run -
+                            <br><i class="terminal">$ node nma.js</i>
+                            <br>  4. <strike>It may prompt you to install the <i>sync-mysql</i> module. Please install it and then repeat step 3.</strike> [Update v2.0] On the first run, the script will automatically install all required dependencies and launch the app.
+                            <br><br>  5. To run the app, open your browser and Navigate to - <i style="color:darkgrey">https://localhost:3000/index</i>.
                         </span></td></tr>
                         <tr><td></td></tr>
-                        <tr><td><strong>Screenshots</strong></td></tr>
+                        <tr><td><strong>Screenshots</strong><hr></hr></td></tr>
                         <tr><td>
                             <span>
                                 <img width="800" src="https://user-images.githubusercontent.com/60380578/133299257-cf16d5e7-d05c-4251-ad36-3544e28ad8dc.png" alt="nodeMiniAdmin Result Screen">
@@ -70,23 +70,23 @@
                                 <br><i class="captions">4. nodeMiniAdmin Add MySQL Connection Screen</i>
                             </span>
                         </td></tr>
-
-                        <tr><td><strong>Links</strong></td></tr>
+                        <tr><td></td></tr>
+                        <tr><td><strong>Links</strong><hr></hr></td></tr>
                         <tr><td>
                             <a class="links" href='javascript:void(0)'><strike>Live Demo</strike> Link coming soon!</a><br>
                             <a class="links" target="_blank" href="https://github.com/patil-rahuls/nodeMiniAdmin">Github Page</a>
                         </td></tr>
 
-                        <tr><td><strong>Troubleshooting</strong></td></tr>
-                        <tr><td>
-                            1. If port 3000 is already in use or blocked, free it up using the following commands.
-                            <br>&nbsp;&nbsp;&nbsp;&nbsp;linux users: <br><i style="color:darkgrey">sudo fuser -k 8000/tcp</i>
-                            <br>&nbsp;&nbsp;&nbsp;&nbsp;OSX users  : <br><i style="color:darkgrey">sudo lsof -t -i tcp:8000 | xargs kill -9</i>
-                            <br>2. If you encounter file I/O errors or exceptions, try running the app with elevated privileges <br><i style="color:darkgrey">sudo node nma.js</i>.
-                            <br>
+                        <tr><td><strong>Troubleshooting</strong><hr></hr></td></tr>
+                        <tr><td><span>
+                            1. If port 3000 is already in use or blocked, you can free it up using the following command -
+                            <br><br><i style="color:darkgrey">linux users: </i><br><i class="terminal">$ sudo fuser -k 8000/tcp</i>
+                            <br><i style="color:darkgrey">OSX users:  </i><br><i class="terminal">$ sudo lsof -t -i tcp:8000 | xargs kill -9</i>
+                            <br><br>2. If you encounter file I/O errors or exceptions, try running the app with elevated privileges (e.g., as an administrator/sudo) - <br><i class="terminal">$ sudo node nma.js</i>.
+                            </span><br>
                         </td></tr>
-                        <tr><td></td></tr>
-                        <tr><td></td></tr>
+                        <tr><td>&nbsp; <br></td></tr>
+                        <tr><td>&nbsp; <br></td></tr>
                     </tbody>
                 </table>
             </div>
