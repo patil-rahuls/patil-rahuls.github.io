@@ -17,50 +17,84 @@
             <div id="loading"></div>
          </aside>
          <article>
-            <h1 id="heading">I'm mostly into videography, but I don't mind experimenting with photos.</h1>
-            <div>
-               <table class="fade-in">
-                  <tr><td>
-                     <div class="wrap">
-                     <div class="masonry" id="masonry"></div>
-                     </div>
-                  </td></tr>
-                  <tr><td>&nbsp; <br></td></tr>
-                  <tr><td>&nbsp; <br></td></tr>
-               </table>
-            </div>
-         </article>
-      </div>
+						<h1 id="heading">I'm mostly into videography, but I don't mind experimenting with photos.</h1>
+						<div>
+							<table class="fade-in">
+								<tbody>
+									<div class="masonry" id="gallery"></div>
+								</tbody>
+							</table>
+						</div>
+					</article>
+		 </div>
 
-      <footer>
-         <ul class="footer" style="list-style:none;">
-          <li>
-             <a href="/contact" style="display:inline-block">contact</a>
-             &nbsp;
-             <a href="/privacy" style="display:inline-block">privacy</a>
-             &nbsp;
-             <div id="newsletter_form">
-                <button id="mobileMenuBtn">
-                  <div class="hamburger">
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                 </div>
-               </button>
-                <!-- <button id="subscribe">Subscribe </button>
-                <input  id="newsletter" type="text" placeholder="for newsletter"> -->
-             </div>
-          </li>
-         </ul>
+		 <footer>
+			<ul class="footer" style="list-style:none;">
+			 <li>
+					<a href="/contact" style="display:inline-block">contact</a>
+					&nbsp;
+					<a href="/privacy" style="display:inline-block">privacy</a>
+					&nbsp;
+					<div id="newsletter_form">
+						 <button id="mobileMenuBtn">
+							 <div class="hamburger">
+									<span></span>
+									<span></span>
+									<span></span>
+							</div>
+						</button>
+						 <!-- <button id="subscribe">Subscribe </button>
+						 <input  id="newsletter" type="text" placeholder="for newsletter"> -->
+					</div>
+			 </li>
+			</ul>
 
-         <section id="mobileMenu" hidden="hidden">
-            <button id="closeMobileMenuBtn" title="Close">&#x2715;</button>
-            <ul id="mobileMenuList"></ul>
-         </section>
-      </footer>
+			<section id="mobileMenu" hidden="hidden">
+				 <button id="closeMobileMenuBtn" title="Close">&#x2715;</button>
+				 <ul id="mobileMenuList"></ul>
+			</section>
+	 </footer>
 
-      <script src="/config.js"></script>
-      <script src="/script.js"></script>
-      <script src="/photography.js"></script>
-   </body>
+		 <script src="/config.js"></script>
+		 <script src="/script.js"></script>
+		 <script>
+			// Predefined images with dimensions (aspect ratios)
+			const gallery = document.getElementById('gallery');
+			myPhotos.forEach(({ src, width, height }) => {
+				const aspectRatio = height / width;
+				const item = document.createElement('div');
+				item.className = 'item';
+				// Skeleton placeholder with correct height using padding-top trick
+				const skeleton = document.createElement('div');
+				skeleton.className = 'skeleton';
+				skeleton.style.paddingTop = `${aspectRatio * 100}%`;
+				const img = document.createElement('img');
+				img.setAttribute('data-src', src);
+				img.onload = () => {
+					item.classList.add('loaded');
+				};
+				item.appendChild(skeleton);
+				item.appendChild(img);
+				gallery.appendChild(item);
+			});
+
+			// Lazy load with IntersectionObserver
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const img = entry.target;
+						if (!img.src) {
+							img.src = img.dataset.src;
+						}
+						observer.unobserve(img);
+					}
+				});
+			}, {
+				rootMargin: '100px' // preload before visible
+			});
+			document.querySelectorAll('img[data-src]').forEach(img => {
+				observer.observe(img);
+			});
+		</script>
+	</body>
 </html>
