@@ -1,13 +1,13 @@
-const hideContents = () => {
-	document.querySelector('.wrapper article div')?.remove();
-	let element = document.getElementsByTagName("table");
-	if(element?.[0]){
-		element[0].style.display = 'none';
-	}
-};
+// const hideContents = () => {
+// 	document.querySelector('.wrapper article div')?.remove();
+// 	let element = document.getElementsByTagName("table");
+// 	if(element?.[0]){
+// 		element[0].style.display = 'none';
+// 	}
+// };
 const fetchPage = (elem) => {
-	hideContents();
-	document.getElementById("loading").style.display='block';
+	// hideContents();
+	// document.getElementById("loading").style.display='block';
 };
 const initializeMenu = () => {
 	let menuHtml = '';
