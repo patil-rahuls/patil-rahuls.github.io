@@ -32,3 +32,4 @@ const myPhotos = [
   { src: '/assets/photography/14.jpeg', width: 531, height: 531 },
   { src: '/assets/photography/15.jpeg', width: 531, height: 531 }
 ];
+const texts = ['RAHUL S PATIL', 'NODE.JS', 'ELECTRONICS', 'ROBOTICS', 'PHOTOGRAPHY'];

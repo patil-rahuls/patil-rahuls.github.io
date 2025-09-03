@@ -115,10 +115,30 @@ const initializeMobileMenu = () => {
 	mobileMenuBtn.addEventListener('click', showMenu);
 	closeMobileMenuBtn.addEventListener('click', hideMenu);
 };
+const initializeScrollingTexts = () => {
+	let i = 0, charIndex = 0;
+	const el = document.getElementById("name");
+	function showTexts() {
+		if (charIndex < texts[i].length) {
+			el.textContent += texts[i].charAt(charIndex);
+			charIndex++;
+			setTimeout(showTexts, 80);
+		} else {
+			setTimeout(() => {
+				el.textContent = "";
+				charIndex = 0;
+				i = (i+1) % texts.length;
+				showTexts();
+			}, 1500);
+		}
+	}
+	showTexts();
+};
 document.addEventListener("DOMContentLoaded", function() {
 	initializeMenu();
 	setActiveLinks();
 	initializeMobileMenu();
+	initializeScrollingTexts();
 });
 function openLink(elem){
 	const link = elem.getAttribute('x-href');

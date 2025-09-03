@@ -13,6 +13,18 @@
     z-index:2299;
     margin: 50px 0px 0px 36%;
 }
+#name {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    letter-spacing: 2px;
+    background: #fff;
+    height: 23px;
+    padding: 8px;
+    z-index: 9999;
+}
 h1 {
     display: block;
     font-size: 2em;
@@ -286,7 +298,7 @@ footer {
     background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%) !important;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 1222px) {
     table tbody tr td img, table tbody tr td iframe {
         width: 100%;
     }
@@ -311,7 +323,12 @@ footer {
         margin: 0 12%;
     }
 }
-@media (min-width: 700px) {
+@media (max-width: 700px) {
+    #name {
+        display: none;
+    }
+}
+@media (min-width: 1221px) {
     #menu {
         display: block !important;
     }
@@ -321,30 +338,30 @@ footer {
 }
 
 /* Photos Layout */
-  .masonry {
+.masonry {
     column-count: 4;
     column-gap: 16px;
     padding: 16px;
-  }
-  .item {
+}
+.item {
     break-inside: avoid;
     margin-bottom: 16px;
     background: #eee;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-  }
-  .skeleton {
+}
+.skeleton {
     width: 100%;
     background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
     background-size: 200% 100%;
     animation: shimmer 1.2s infinite;
-  }
-  @keyframes shimmer {
+}
+@keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
-  }
-  .item img {
+}
+.item img {
     width: 100%;
     display: block;
     opacity: 0;
@@ -352,21 +369,21 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .item.loaded img {
+}
+.item.loaded img {
     opacity: 1;
     position: relative;
-  }
-  .item.loaded .skeleton {
+}
+.item.loaded .skeleton {
     display: none;
-  }
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .masonry {
       column-count: 2;
     }
-  }
-  @media (max-width: 480px) {
+}
+@media (max-width: 480px) {
     .masonry {
       column-count: 1;
     }
-  }
+}
